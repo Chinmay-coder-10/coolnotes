@@ -17,7 +17,7 @@ const Herosection = () => {
                             <div className="collapse navbar-collapse" id="navbarSupportedContent">
                                 <ul className="navbar-nav me-auto mb-2 mb-lg-0">
                                     <li className="nav-item">
-                                        <NavLink  className="nav-link" aria-current="page" to="/">Home</NavLink>
+                                        <NavLink className="nav-link" aria-current="page" to="/">Home</NavLink>
                                     </li>
                                     <li className="nav-item">
                                         <NavLink className="nav-link" aria-current="page" to="/notes">My Notes</NavLink>
@@ -30,11 +30,13 @@ const Herosection = () => {
                         </div>
                     </nav>
                 </div>
-                <h1 className="welcome">Welcome to Cool Notes!</h1>
-                <span className="welcomedesc">Collect your
+                <div className="welcomeheading">
+                <h1 className="welcome mx-4">Welcome to Cool Notes!</h1>
+                <h3 className="welcomedesc mx-4">Collect your
                     thoughts and keep it on a central place like Ideas, School Notes
                     , Todos, Lists and Reminders
-                </span>
+                </h3>
+                </div>
                 <div className="custom-shape-divider-bottom-1640966291">
                     <svg data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 120"
                         preserveAspectRatio="none">

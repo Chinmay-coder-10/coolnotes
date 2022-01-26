@@ -13,7 +13,7 @@
   font-size: 22px;
 }
 .hero-section {
-  height: 587px;
+  height: 90vh;
   background: linear-gradient(
     rgb(10, 61, 189),
     rgb(7, 56, 189),
@@ -24,9 +24,6 @@
   top: 0px;
 }
 
-.home-area {
-  position: relative;
-}
 .logo {
   width: 90px;
   height: 90px;
@@ -56,28 +53,16 @@
 }
 
 .welcome {
-  width: 810px;
   color: rgba(255, 255, 255, 1);
-  position: absolute;
-  top: 183px;
-  left: 51px;
   font-family: Roboto;
-  font-weight: Medium;
-  font-size: 67px;
-  opacity: 1;
-  text-align: left;
+  font-size: 63px;
 }
 .welcomedesc {
-  width: 778px;
   color: rgba(255, 255, 255, 1);
-  position: absolute;
-  top: 271px;
-  left: 57px;
   font-family: Roboto;
   font-weight: Medium;
+  width: 53vw;
   font-size: 29px;
-  opacity: 1;
-  text-align: left;
 }
 
 .v130_3 {
@@ -303,7 +288,7 @@
   display: flex;
   margin-top: -21px;
 }
-.blob{
+.blob {
   background: url("../images/blob.svg") no-repeat;
   height: 168%;
   width: 77%;
@@ -1205,13 +1190,12 @@
 
 .custom-shape-divider-bottom-1640966291 {
   position: absolute;
-  bottom: 0;
-  left: 0;
+  bottom: -63px;
+  left: -1px;
   width: 100%;
   overflow: hidden;
   line-height: 0;
-  transform: rotate(180deg);
-}
+  transform: rotate(180deg);}
 
 .custom-shape-divider-bottom-1640966291 svg {
   position: relative;
@@ -1247,7 +1231,14 @@
 }
 
 @media (max-width: 768px) {
-  .hero-section{
-    width: 109vw;
+  .welcome{
+    font-weight: bolder;
   }
- }
+  .welcomedesc {
+    width: 100%;
+    font-size: 2rem;
+  }
+  .welcomeheading {
+    width: 93vw;
+  }
+}
