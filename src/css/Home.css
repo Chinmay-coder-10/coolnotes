@@ -15,10 +15,10 @@
 .hero-section {
   height: 90vh;
   background: linear-gradient(
-    rgb(10, 61, 189),
-    rgb(7, 56, 189),
-    rgb(54, 94, 202),
-    rgb(46, 121, 226)
+    178.1deg,
+    #042f9d 19.12%,
+    rgba(0, 87, 204, 0.72) 50.4%,
+    rgb(35 165 255 / 89%) 108.94%
   );
   position: relative;
   top: 0px;
@@ -296,15 +296,11 @@
   bottom: 362px;
   left: 272px;
 }
-.whycoolnotes {
-  font-weight: bolder;
+.whycoolnotesheading {
   font-size: 45px;
+  font-weight: 700;
+  color:#1048d3 ;
   margin: 36px 53px;
-}
-.coolnotes {
-  color: #3015ff;
-  font-size: 120%;
-  margin: 0px 18px;
 }
 .notesillustration {
   width: 31%;
@@ -1195,7 +1191,8 @@
   width: 100%;
   overflow: hidden;
   line-height: 0;
-  transform: rotate(180deg);}
+  transform: rotate(180deg);
+}
 
 .custom-shape-divider-bottom-1640966291 svg {
   position: relative;
@@ -1229,9 +1226,28 @@
 .custom-shape-divider-bottom-1640970012 .shape-fill {
   fill: #ffffff;
 }
+.custom-shape-divider-bottom-1643471356 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+}
 
+.custom-shape-divider-bottom-1643471356 svg {
+  position: relative;
+  display: block;
+  width: calc(100% + 1.3px);
+  height: 87px;
+}
+
+.custom-shape-divider-bottom-1643471356 .shape-fill {
+  fill: #ffffff;
+}
 @media (max-width: 768px) {
-  .welcome{
+  .welcome {
     font-weight: bolder;
   }
   .welcomedesc {
@@ -1240,5 +1256,27 @@
   }
   .welcomeheading {
     width: 93vw;
+  }
+  .second-section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .notesillustration {
+    width: 49%;
+    position: relative;
+    margin-top: 46px;
+  }
+  .points {
+    flex-direction: column;
+  }
+  .pointheading {
+    font-size: 27px;
+  }
+  .whycoolnotesheading {
+    color:#1048d3 ;
+    font-size: 2.5rem!important;
+    height: max-content;
+    width: max-content;
   }
 }
