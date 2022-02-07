@@ -12,7 +12,7 @@ const Secondsection = () => {
             <div class="second-section font1">
                 <img src={Notesillustration} className="notesillustration" />
                 <div className="whyCN">
-                    <div className="whycoolnotes d-flex justify-content-center"><h1 className="whycoolnotesheading">Why Cool Notes?</h1></div>
+                    <div className="whycoolnotes d-flex justify-content-center"><h1 className="whycoolnotesheading heading">Why Cool Notes?</h1></div>
                     <div className="points">
                         <div className="pointimgparent"> <img src={WebBased} alt="webbased" className="pointimg" /></div>
                         <p className="pointheading">Web Based. No need to install any software</p>
