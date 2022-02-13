@@ -1,0 +1,128 @@
+.social-login img {
+  width: 24px;
+}
+
+a {
+  text-decoration: none;
+}
+
+.registercard {
+  width: 28rem;
+  font-family: 'IBM Plex Sans', sans-serif;
+  border: none!important;
+  outline: none;
+  margin: 0 7rem;
+  width: 28rem;
+}
+
+.title {
+  font-weight: bold;
+  margin: auto;
+}
+
+.registerheading {
+  font-family: "Roboto", sans-serif;
+  text-align: center;
+}
+
+.subtitle {
+  text-align: center;
+  font-weight: bold;
+}
+
+.btn-text {
+  margin: 0;
+}
+
+.social-login {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+}
+
+.google-btn {
+  background: #fff;
+  border: solid 2px rgb(245 239 239);
+  border-radius: 8px;
+  font-weight: bold;
+  display: flex;
+  padding: 10px 10px;
+  flex: auto;
+  align-items: center;
+  gap: 5px;
+  justify-content: center;
+  font-family: "Roboto";
+}
+
+.fb-btn {
+  background: #fff;
+  border: solid 2px rgb(69, 69, 185);
+  border-radius: 8px;
+  padding: 10px;
+  display: flex;
+  align-items: center;
+}
+
+.or {
+  text-align: center;
+  font-weight: bold;
+  border-bottom: 2px solid rgb(245 239 239);
+  line-height: 0.1em;
+  margin: 25px 0;
+}
+
+.or span {
+  background: #fff;
+  padding: 0 10px;
+}
+
+.email-login {
+  display: flex;
+  flex-direction: column;
+  font-family: "Roboto", sans-serif;
+}
+
+.email-login label {
+  color: rgb(170 166 166);
+}
+
+.cta-btn {
+  background-color: rgb(69, 69, 185);
+  color: white;
+  padding: 18px 20px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  width: 100%;
+  border-radius: 10px;
+  border: none;
+}
+
+.input {
+  padding: 9px;
+  border: none;
+  outline: none;
+  border-bottom: 2px solid #ff4949;
+  margin-bottom: 9px;
+  transition: 2s ease-in-out;
+  font-size: 20px;
+  font-family: "Roboto", sans-serif;
+}
+
+.submitbtn {
+  background-color: #e2454d;
+  color: white;
+  padding: 18px 20px;
+  margin-top: 10px;
+  margin-bottom: 20px;
+  width: 127px;
+  border-radius: 41px;
+  border: none;
+  font-size: 19px;
+  height: 50px;
+  cursor: pointer;
+  transition: 0.4s ease-in-out;
+}
+
+.submitbtn:hover {
+  box-shadow: -2px 7px 20px 0px rgb(173 173 173 / 46%);
+}

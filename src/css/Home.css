@@ -73,7 +73,6 @@
   width: 53vw;
   font-size: 29px;
 }
-
 .getstarted {
   background-color: red;
   background-image: linear-gradient(45deg, #090979, #00d4ff);
@@ -84,11 +83,16 @@
   -moz-background-clip: text;
   -moz-text-fill-color: transparent;
   font-family: "Nunito Sans", sans-serif;
-  font-size: 53px;
+  font-size: 61px;
   width: max-content;
 }
-.getstartedp{
-  font-size: 22px;
+.getstartedp {
+  font-size: 23px;
+  font-family: "IBM Plex Sans", sans-serif;
+}
+.footeritem {
+  display: flex;
+  justify-content: space-between;
 }
 .v130_3 {
   width: 149px;
@@ -1267,7 +1271,10 @@
   width: calc(100% + 1.3px);
   height: 87px;
 }
-
+.wave {
+  position: absolute;
+  bottom: 0;
+}
 .custom-shape-divider-bottom-1643471356 .shape-fill {
   fill: #ffffff;
 }
@@ -1278,9 +1285,13 @@
   .welcomedesc {
     width: 100%;
     font-size: 2rem;
+    width: 53vw;
   }
   .welcomeheading {
     width: 93vw;
+  }
+  .rightside {
+    margin: 0 -68px;
   }
   .second-section {
     display: flex;
@@ -1288,7 +1299,7 @@
     align-items: center;
   }
   .notesillustration {
-    width: 49%;
+    width: 69%;
     position: relative;
     margin-top: 46px;
   }
@@ -1307,4 +1318,21 @@
   .footeritem {
     flex-direction: column;
   }
+  .registercard {
+    margin: 0 4rem !important;
+  }
+}
+
+.notecard {
+  width: 28rem;
+  height: 16rem;
+  background: linear-gradient(
+    180deg,
+    #4361ff 0%,
+    #4661ff 0.01%,
+    rgba(69, 211, 255, 0.85) 76.56%,
+    rgba(69, 211, 255, 0.85) 76.57%
+  );
+  box-shadow: 0px 10px 50px 2px rgba(0, 0, 0, 0.25);
+  border-radius: 50px;
 }
