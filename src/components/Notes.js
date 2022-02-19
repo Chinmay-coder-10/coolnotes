@@ -37,6 +37,7 @@ const Notes = () => {
                     )
                 })}
             </div>
+            <h1>Hello World</h1>
             {/* <div className="notecard"></div> */}
         </>
     )
