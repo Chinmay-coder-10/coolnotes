@@ -15,7 +15,6 @@ const Footersection = () => {
                     <Register />
                 </div>
             </div>
-            <div className="notecard"></div>
         </div>
     )
 };
