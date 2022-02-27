@@ -24,6 +24,7 @@ const Notes = () => {
     useEffect(() => {
         displayrandomnumber();
     }, []);
+    const t = "Hello";
     return (
         <>
             <Navbar color="black" />
