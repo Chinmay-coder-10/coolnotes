@@ -1,52 +1,20 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { Button, TextField } from '@mui/material';
 import "../css/Login.css"
 import Navbar from './Navbar';
 import { auth, db } from '../firebase';
 
-const Register = ({ }) => {
+const Login = ({ userinfo }) => {
+    const [userloginemail, setuserloginemail] = useState("");
+    const [userloginpassword, setuserloginpassword] = useState("");
 
-    const [userinfo, setuserinfo] = useState(null);
-    const [notestate, setnotestate] = useState([]);
-
-    useEffect(() => {
-        auth.onAuthStateChanged(user => {
-            if (user) {
-                console.log("User available");
-                setuserinfo(user)
-                // console.log(userinfo);
-                const docRef = db.collection("notes").doc(user.uid)
-                docRef.onSnapshot(docSnapshot => {
-                    if (docSnapshot.exists) {
-                        console.log(docSnapshot.data());
-                        // setnotestate(docSnapshot.data())
-                    } else {
-                        console.log("No notes");
-                    }
-                })
-            }
-            else {
-                console.log("NO USER REGISTER");
-            }
-        })
-    }, []);
-    const [useremail, setuseremail] = useState("");
-    const [userpassword, setuserpassword] = useState("");
-    const [notetitle, setnotetitle] = useState("");
-    const [notedesc, setnotedesc] = useState("");
-
-    const registeruser = async () => {
+    const loginuser = async () => {
         try {
-            const registeruserresult = await auth.createUserWithEmailAndPassword(useremail, userpassword);
-            alert(registeruserresult.user.uid)
+            const registeruserresult = await auth.signInWithEmailAndPassword(userloginemail, userloginpassword);
+            alert("Logged in")
         } catch (error) {
             alert(error)
         }
-    }
-    const addNote = () => {
-        db.collection("notes").doc(userinfo.uid).set({
-            note: [...notestate, { notetitle: notetitle, notedesc: notedesc }]
-        })
     }
     return (
         <>
@@ -54,7 +22,7 @@ const Register = ({ }) => {
             <div className="d-flex justify-content-center">
                 <div className="registercard">
                     <div className="registerheading">
-                        <h2 className="title my-3">Create an account</h2>
+                        <h2 className="title my-3">Login</h2>
                     </div>
                     <div className="social-login">
                         <button className="google-btn">
@@ -69,20 +37,17 @@ const Register = ({ }) => {
                     <div className="email-login">
                         <div className="email-login">
                             <label htmlFor="email" className="my-2">Email</label>
-                            <TextField autoComplete="off" type="email" id="standard-basic" variant="standard" value={useremail} onChange={(e) => { setuseremail(e.target.value) }} />
+                            <TextField autoComplete="off" type="email" id="standard-basic" variant="standard" value={userloginemail} onChange={(e) => { setuserloginemail(e.target.value) }} />
                             {/* <input type="email" className="email input" required /> */}
                             <label htmlFor="password" style={{ marginTop: "12px" }} >Password</label>
                             {/* <input type="password" className="input password" required /> */}
-                            <TextField type="password" id="standard-basic" variant="standard" style={{ marginTop: "2px" }} value={userpassword} onChange={(e) => { setuserpassword(e.target.value) }} />
+                            <TextField type="password" id="standard-basic" variant="standard" style={{ marginTop: "2px" }} value={userloginpassword} onChange={(e) => { setuserloginpassword(e.target.value) }} />
                         </div>
                     </div>
-                    <Button className="my-3" variant="contained" color="success" style={{ borderRadius: "25px", width: "100%" }} onClick={registeruser}>Create an account</Button>
+                    <Button className="my-3" variant="contained" color="success" style={{ borderRadius: "25px", width: "100%" }} onClick={loginuser}>Login</Button>
                 </div>
-                <TextField autoComplete="off" type="email" id="standard-basic" variant="standard" value={notetitle} onChange={(e) => { setnotetitle(e.target.value) }} />
-                <TextField autoComplete="off" type="email" id="standard-basic" variant="standard" value={notedesc} onChange={(e) => { setnotedesc(e.target.value) }} />
-                <Button className="my-3" variant="contained" color="success" style={{ borderRadius: "25px", width: "3vw" }} onClick={addNote}>Add Cool Note</Button>
             </div>
         </>)
 };
 
-export default Register;
+export default Login;

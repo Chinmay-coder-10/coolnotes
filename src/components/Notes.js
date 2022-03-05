@@ -7,24 +7,22 @@ const Notes = () => {
     const [notetitle, setnotetitle] = useState(Noteraw);
     const [randomstyle, setrandomstyle] = useState("");
     const [notediv, setnotediv] = useState("notediv");
-
-    let colours = ['linear-gradient(to right, #36d1dc, #5b86e5)', "linear-gradient(to right, #1a2a6c, #b21f1f, #fdbb2d)", "linear-gradient(to right, #0cebeb, #20e3b2, #29ffc6)", "linear-gradient(to right, #7f00ff, #e100ff)", "linear-gradient(to right, #ff9966, #ff5e62)", " linear-gradient(to bottom, #4361ff,  #4659ff, #3bbae2)"];
+    let colours = ['linear-gradient( 180deg, #ABDCFF 10%, #0396FF 100%', ' linear-gradient( 180deg, #81FBB8 10%, #28C76F 100%)', 'linear-gradient( 180deg, #52E5E7 10%, #130CB7 100%)', 'linear-gradient( 180deg, #FFE985 10%, #FA742B 100%)'];
     function getRandomColour(min, max) {
         let step1 = max - min + 1;
         let step2 = Math.random() * step1;
         let result = Math.floor(step2) + min;
         return result;
     }
-    function displayrandomnumber() {
+    function displayrandomcolour() {
         let index = getRandomColour(0, colours.length - 1);
         setrandomstyle(colours[index]);
         console.log(colours[index]);
-        console.log(localStorage);
     }
     useEffect(() => {
-        displayrandomnumber();
+        displayrandomcolour();
+        console.log(process.env.REACT_APP_STORAGEBUCKET);
     }, []);
-    const t = "Hello";
     return (
         <>
             <Navbar color="black" />
@@ -38,7 +36,6 @@ const Notes = () => {
                     )
                 })}
             </div>
-            <h1>Hello World</h1>
             {/* <div className="notecard"></div> */}
         </>
     )

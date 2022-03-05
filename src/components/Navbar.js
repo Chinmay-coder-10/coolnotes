@@ -2,6 +2,7 @@ import React from 'react'
 import Logo from "../images/logo.png"
 import "../css/Navbar.css"
 import { NavLink } from 'react-router-dom'
+import { auth } from '../firebase'
 
 const Navbar = ({ color }) => {
     return (
@@ -23,6 +24,9 @@ const Navbar = ({ color }) => {
                                 </li>
                                 <li className="nav-item">
                                     <NavLink style={{ color: color }}  className="nav-link" aria-current="page" to="/addnote">Add Note</NavLink>
+                                </li>
+                                <li className="nav-item">
+                                    <NavLink style={{ color: color }}  className="nav-link" aria-current="page" onClick={()=>{auth.signOut()}} to="#">Log out</NavLink>
                                 </li>
                             </ul>
                         </div>
