@@ -36,6 +36,7 @@ const Notes = () => {
                     )
                 })}
             </div>
+            
             {/* <div className="notecard"></div> */}
         </>
     )

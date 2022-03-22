@@ -12,6 +12,8 @@ const Login = ({ userinfo }) => {
         try {
             const registeruserresult = await auth.signInWithEmailAndPassword(userloginemail, userloginpassword);
             alert("Logged in")
+            setuserloginemail("");
+            setuserloginpassword("")
         } catch (error) {
             alert(error)
         }

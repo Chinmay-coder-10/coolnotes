@@ -9,27 +9,9 @@ const Register = ({ }) => {
     const [userinfo, setuserinfo] = useState(null);
     const [notestate, setnotestate] = useState([]);
 
-    useEffect(() => {
-        auth.onAuthStateChanged(user => {
-            if (user) {
-                console.log("User available");
-                setuserinfo(user)
-                // console.log(userinfo);
-                const docRef = db.collection("notes").doc(user.uid)
-                docRef.onSnapshot(docSnapshot => {
-                    if (docSnapshot.exists) {
-                        console.log(docSnapshot.data());
-                        // setnotestate(docSnapshot.data())
-                    } else {
-                        console.log("No notes");
-                    }
-                })
-            }
-            else {
-                console.log("NO USER REGISTER");
-            }
-        })
-    }, []);
+    // useEffect(() => {
+      
+    // }, []);
     const [useremail, setuseremail] = useState("");
     const [userpassword, setuserpassword] = useState("");
     const [notetitle, setnotetitle] = useState("");
@@ -39,6 +21,8 @@ const Register = ({ }) => {
         try {
             const registeruserresult = await auth.createUserWithEmailAndPassword(useremail, userpassword);
             alert(registeruserresult.user.uid)
+            setuseremail("");
+            setuserpassword("")
         } catch (error) {
             alert(error)
         }
@@ -78,9 +62,6 @@ const Register = ({ }) => {
                     </div>
                     <Button className="my-3" variant="contained" color="success" style={{ borderRadius: "25px", width: "100%" }} onClick={registeruser}>Create an account</Button>
                 </div>
-                <TextField autoComplete="off" type="email" id="standard-basic" variant="standard" value={notetitle} onChange={(e) => { setnotetitle(e.target.value) }} />
-                <TextField autoComplete="off" type="email" id="standard-basic" variant="standard" value={notedesc} onChange={(e) => { setnotedesc(e.target.value) }} />
-                <Button className="my-3" variant="contained" color="success" style={{ borderRadius: "25px", width: "3vw" }} onClick={addNote}>Add Cool Note</Button>
             </div>
         </>)
 };
