@@ -28,6 +28,15 @@ const Navbar = ({ color }) => {
                                 <li className="nav-item">
                                     <NavLink style={{ color: color }}  className="nav-link" aria-current="page" onClick={()=>{auth.signOut()}} to="#">Log out</NavLink>
                                 </li>
+                                <li className="nav-item">
+                                    <NavLink style={{ color: color }}  className="nav-link" aria-current="page" to="/addnote">Add note</NavLink>
+                                </li>
+                                <li className="nav-item">
+                                    <NavLink style={{ color: color }}  className="nav-link" aria-current="page" to="/login">Login</NavLink>
+                                </li>
+                                <li className="nav-item">
+                                    <NavLink style={{ color: color }}  className="nav-link" aria-current="page" to="/register">Register</NavLink>
+                                </li>
                             </ul>
                         </div>
                     </div>
