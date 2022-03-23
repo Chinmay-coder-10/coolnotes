@@ -5,33 +5,56 @@ import { db, auth } from '../firebase';
 import { useNavigate } from 'react-router-dom';
 
 const Addnote = ({ user }) => {
-    const [mytodos, setTodos] = useState({});
+    const [mytodos, setTodos] = useState([]);
     const [text, settext] = useState("");
     useEffect(() => {
-
         if (user) {
-            const docref = db.collection("todos").doc(user.uid)
+            const docref = db.collection(user.uid);
             docref.onSnapshot(docSnap => {
+                let changes = docSnap.docChanges();
+                changes.forEach(change => {
+                    if (change.type === "added") {
+                        mytodos.push({
+                            id: change.doc.id,
+                            Todo: change.doc.data().Todo
+                        })
+                    } if (change.type === 'removed') {
+                        // console.log(change.type);
+                        for (var i = 0; i < mytodos.length; i++) {
+                            if (mytodos[i].id === change.doc.id) {
+                                mytodos.splice(i, 1);
+                            }
+                        }
+                    }
+                    setTodos(mytodos)
+                })
                 if (docSnap.exists) {
-                    console.log(docSnap.data().todos);
-                    setTodos(docSnap.data().todos)
+                    setTodos(docSnap.data())
+                    console.log(docSnap);
                 } else {
-                    console.log("No docs");
+                    console.log("No a");
                 }
             })
         }
+
         else {
             console.log("no user");
         }
     }, []);
 
     const addTodo = () => {
-        db.collection("todos").doc(user.uid).update({
-            todos: [...mytodos, text]
-        }, { merge: true })
-
-        console.log("update")
+        const date = new Date();
+        const time = date.getTime();
+        const counter = time;
+        const id = counter;
+        console.log(id);
+        db.collection(user.uid).doc("_" + id).set({
+            id: "_" + id,
+            text
+        })
+        console.log("Added todo")
     }
+
     return (
         <>
             <Navbar color="black" />
@@ -41,7 +64,6 @@ const Addnote = ({ user }) => {
                 {/* <TextField type="text" id="standard-basic" variant="standard" style={{ marginTop: "2px" }} value={notedesc} onChange={(e) => { setnotedesc(e.target.value) }} /> */}
             </div>
             <Button className="my-3" variant="contained" color="success" style={{ borderRadius: "25px", width: "20%" }} onClick={addTodo}>Add note</Button>
-
         </>
     )
 }
